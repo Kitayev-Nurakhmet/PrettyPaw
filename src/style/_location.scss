@@ -106,6 +106,7 @@
         url("../img/mammals.webp") 1x,
         url("../img/mammals.jpg") 1x
       );
+      
 
       @include sm {
         background-image: url("../img/mammals_tablet.jpg");
@@ -116,6 +117,7 @@
           url("../img/mammals_tablet.jpg") 1x
         );
       }
+    }
 
     &_birds::before {
       background-image: url("../img/birds.jpg");
@@ -125,7 +127,6 @@
         url("../img/birds.webp") 1x,
         url("../img/birds.jpg") 1x
       );
-    }
 
       @include sm {
         background-image: url("../img/birds_tablet.jpg");
@@ -136,8 +137,9 @@
           url("../img/birds_tablet.jpg") 1x
         );
       }
-
     }
+
+
 
     &_reptiles::before {
       background-image: url("../img/reptiles.jpg");
