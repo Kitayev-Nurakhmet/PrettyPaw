@@ -1,0 +1,209 @@
+html {
+  position: relative;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Mulish, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 300;
+  background-color: $back;
+  color: $main;
+  line-height: 1.4;
+  font-size: 16px;
+
+  @include lg {
+    font-size: 20px;
+  }
+}
+
+
+img, svg, video {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+
+
+button {
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+fieldset {
+  margin: 0;
+}
+
+iframe {
+  border: none;
+}
+
+/*
+Доступно скрываю элементы
+*/
+
+.visually-hidden {
+  position: fixed;
+  transform: scale(0);
+}
+
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  @include xxl {
+    max-width: 2560px;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.container {
+  padding-left: 16px;
+  padding-right: 16px;
+  
+
+  @include sm {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  
+  @include md {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  
+  @include xl {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  @include xxl {
+    padding-left: 60px;
+    padding-right: 60px;
+    max-width: 2560px;
+    margin: 0 auto;
+  }
+}
+
+.link-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 20px;
+  font-weight: 1000;
+  font-size: 16px;
+  line-height: 1;
+  color: $back;
+  background: $second;
+  border-radius: 80px;
+  border:  2px solid transparent;
+  outline: none;
+  
+
+  &::after {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.5333 12.8666C7.41107 12.7444 7.34707 12.5888 7.3413 12.4C7.33552 12.2111 7.39396 12.0555 7.51663 11.9333L10.7833 8.66662H3.33329C3.14441 8.66662 2.98596 8.60262 2.85796 8.47462C2.72996 8.34662 2.66618 8.1884 2.66663 7.99995C2.66663 7.81106 2.73063 7.65262 2.85863 7.52462C2.98663 7.39662 3.14485 7.33284 3.33329 7.33328H10.7833L7.51663 4.06662C7.39441 3.9444 7.33596 3.78884 7.3413 3.59995C7.34663 3.41106 7.41063 3.25551 7.5333 3.13328C7.65552 3.01106 7.81107 2.94995 7.99996 2.94995C8.18885 2.94995 8.34441 3.01106 8.46663 3.13328L12.8666 7.53328C12.9333 7.58884 12.9806 7.6584 13.0086 7.74195C13.0366 7.82551 13.0504 7.91151 13.05 7.99995C13.05 8.08884 13.0362 8.17217 13.0086 8.24995C12.9811 8.32773 12.9337 8.39995 12.8666 8.46662L8.46663 12.8666C8.34441 12.9888 8.18885 13.05 7.99996 13.05C7.81107 13.05 7.65552 12.9888 7.5333 12.8666Z' fill='%23FFAA05'/%3E%3C/svg%3E%0A");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &:focus:not(:hover) {
+    border-color: $main;
+  }
+
+
+
+  @include lg {
+    padding: 17px 32px;
+    font-size: 20px;
+    gap: 10px;
+
+    &:hover {
+      color: $main;
+
+      &::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.5333 12.8666C7.41107 12.7444 7.34707 12.5888 7.3413 12.4C7.33552 12.2111 7.39396 12.0555 7.51663 11.9333L10.7833 8.66662H3.33329C3.14441 8.66662 2.98596 8.60262 2.85796 8.47462C2.72996 8.34662 2.66618 8.1884 2.66663 7.99995C2.66663 7.81106 2.73063 7.65262 2.85863 7.52462C2.98663 7.39662 3.14485 7.33284 3.33329 7.33328H10.7833L7.51663 4.06662C7.39441 3.9444 7.33596 3.78884 7.3413 3.59995C7.34663 3.41106 7.41063 3.25551 7.5333 3.13328C7.65552 3.01106 7.81107 2.94995 7.99996 2.94995C8.18885 2.94995 8.34441 3.01106 8.46663 3.13328L12.8666 7.53328C12.9333 7.58884 12.9806 7.6584 13.0086 7.74195C13.0366 7.82551 13.0504 7.91151 13.05 7.99995C13.05 8.08884 13.0362 8.17217 13.0086 8.24995C12.9811 8.32773 12.9337 8.39995 12.8666 8.46662L8.46663 12.8666C8.34441 12.9888 8.18885 13.05 7.99996 13.05C7.81107 13.05 7.65552 12.9888 7.5333 12.8666Z' fill='%23000000'/%3E%3C/svg%3E%0A");
+      }
+    }
+  }
+}
+
+.arrow-top {
+  width: 36px;
+  height: 36px;
+  right: 16px;
+  bottom: 30px;
+
+  @include sm {
+    right: 30px;
+  }
+
+  @include lg {
+    width: 50px;
+    height: 50px;
+    bottom: 100px;
+  }
+
+  &:hover {
+    color: $back;
+  }
+
+  &__svg {
+    width: 12px;
+
+    @include lg {
+      width: 16px;
+    }
+  }
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 16px;
+  background-color: $second;
+  opacity: 1;
+  transition: width .3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  width: 40px;
+  background-color: $back;
+}
